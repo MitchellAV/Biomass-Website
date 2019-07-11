@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Biomass WebApp</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="scripts.js" charset="utf-8"></script>
+</head>
+
+<body id="content">
+  <div id="title">
+    <h1>Biomass Systhesizer Data Collection</h1>
+    <img src="/imgs/sjsu logo.png" alt="" width="400px" height="75px">
+  </div>
+  <div id="toggles">
+    <div class="summary button">View all sensors</div>
+    <div class="temperatures button">Temperatures</div>
+    <div class="irradiance button">Irradiance</div>
+    <div class="massflowrate button">Mass Flow Rate</div>
+    <div class="ph button">PH</div>
+    <div class="mixer button">Mixer Speed</div>
+  </div>
+  <div id="visual">
+    <div id="summary" class="summary">
+      <div class="info">
+        <h2>Current Sensor Readings</h2>
+      </div>
+      <div id="data" class="summary">
+        <div class="amb">Tank Temperature: </div>
+        <div class="tank">Temperature: </div>
+        <div class="ad">Temperature: </div>
+        <div class="irradiances">Irradiance: </div>
+        <div class="cfm">CFM: </div>
+        <div class="massflow">Mass flow rate: </div>
+        <div class="phs">PH: </div>
+        <div class="rpm">Mixer Speed: </div>
+      </div>
+    </div>
+    <div id="temperatures" class="sensor hidden">
+      <div class="data">
+        <h2><b>Current Temperatures</b></h2>
+        <h3 class="amb"><b>Ambient: </b></h3>
+        <h3 class="tank"><b>Tank: </b></h3>
+        <h3 class="ad"><b>Anerobic Digestor: </b></h3>
+      </div>
+      <div class="chart">
+        <canvas id="tempChart" height="300px" width="400px"></canvas>
+        <!-- <img src="/imgs/temps.png" alt="" width="600px" height="420px"> -->
+      </div>
+    </div>
+    <div id="irradiance" class="sensor hidden">
+      <div class="data">
+        <h2><b>Current Irradiance</b></h2>
+        <h3 class="irradiances"><b>Irradiance: </b></h3>
+      </div>
+      <div class="chart">
+        <canvas id="irrChart" height="300px" width="400px"></canvas>
+        <!-- <img src="/imgs/irradiance.png" alt="" width="600px" height="420px"> -->
+      </div>
+    </div>
+    <div id="massflowrate" class="sensor hidden">
+      <div class="data">
+        <h2><b>Current Mass Flow Rate</b></h2>
+        <h3 class="cfm"><b>CFM: </b></h3>
+        <h3 class="massflow"><b>Mass Flow Rate: </b></h3>
+      </div>
+      <div class="chart">
+        <canvas id="flowChart" height="300px" width="400px"></canvas>
+        <!-- <img src="/imgs/massflowrate.png" alt="" width="600px" height="420px"> -->
+      </div>
+    </div>
+    <div id="ph" class="sensor hidden">
+      <div class="data">
+        <h2><b>Current PH</b></h2>
+        <h3 class="phs"><b>PH: </b></h3>
+      </div>
+      <div class="chart">
+        <canvas id="phChart" height="300px" width="400px"></canvas>
+        <!-- <img src="/imgs/pressure.png" alt="" width="600px" height="420px"> -->
+      </div>
+    </div>
+    <div id="mixer" class="sensor hidden">
+      <div class="data">
+        <h2><b>Current Mixer Speed</b></h2>
+        <h3 class="rpm"><b>RPM: </b></h3>
+      </div>
+      <div class="chart">
+        <canvas id="mixerChart" height="300px" width="400px"></canvas>
+        <!-- <img src="/imgs/angularvelocity.png" alt="" width="600px" height="420px"> -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
